@@ -1,0 +1,5 @@
+C:\Users\USER\Desktop\SYSCON\CapaAcceso\bin\Debug\CapaAcceso.dll
+C:\Users\USER\Desktop\SYSCON\CapaAcceso\bin\Debug\CapaAcceso.pdb
+C:\Users\USER\Desktop\SYSCON\CapaAcceso\obj\Debug\CapaAcceso.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\SYSCON\CapaAcceso\obj\Debug\CapaAcceso.dll
+C:\Users\USER\Desktop\SYSCON\CapaAcceso\obj\Debug\CapaAcceso.pdb

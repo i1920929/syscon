@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17235C5D-11AC-4DC4-BE56-387B54AF9205}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proveedor</RootNamespace>
+    <AssemblyName>Proveedor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiRest\DBApi.cs" />
+    <Compile Include="DBSYSCONDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet2.cs">
+      <DependentUpon>DBSYSCONDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet8.cs">
+      <DependentUpon>DBSYSCONDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBSYSCONDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSYSCONDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcceso.Designer.cs">
+      <DependentUpon>frmAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBienvenida.Designer.cs">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategoria.Designer.cs">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucion.Designer.cs">
+      <DependentUpon>frmDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImpresionSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImpresionSalida.Designer.cs">
+      <DependentUpon>frmImpresionSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarCuenta.Designer.cs">
+      <DependentUpon>frmRecuperarCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptFechaVenc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptFechaVenc.Designer.cs">
+      <DependentUpon>frmRptFechaVenc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptKardex.Designer.cs">
+      <DependentUpon>frmRptKardex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptProducto.Designer.cs">
+      <DependentUpon>frmRptProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptTopProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptTopProductos.Designer.cs">
+      <DependentUpon>frmRptTopProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubCategoria.Designer.cs">
+      <DependentUpon>frmSubCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntrada.Designer.cs">
+      <DependentUpon>frmEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonal.Designer.cs">
+      <DependentUpon>frmPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalida.Designer.cs">
+      <DependentUpon>frmSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacion.Designer.cs">
+      <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnidadMedida.Designer.cs">
+      <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RptEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptEntrada.Designer.cs">
+      <DependentUpon>RptEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptPersonal.Designer.cs">
+      <DependentUpon>RptPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptProveedor.Designer.cs">
+      <DependentUpon>RptProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptSalida.Designer.cs">
+      <DependentUpon>RptSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="SYSCON.cs" />
+    <EmbeddedResource Include="frmAcceso.resx">
+      <DependentUpon>frmAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBienvenida.resx">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategoria.resx">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucion.resx">
+      <DependentUpon>frmDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEntrada.resx">
+      <DependentUpon>frmEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImpresionSalida.resx">
+      <DependentUpon>frmImpresionSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonal.resx">
+      <DependentUpon>frmPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarCuenta.resx">
+      <DependentUpon>frmRecuperarCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptFechaVenc.resx">
+      <DependentUpon>frmRptFechaVenc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptKardex.resx">
+      <DependentUpon>frmRptKardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptProducto.resx">
+      <DependentUpon>frmRptProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptTopProductos.resx">
+      <DependentUpon>frmRptTopProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalida.resx">
+      <DependentUpon>frmSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubCategoria.resx">
+      <DependentUpon>frmSubCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacion.resx">
+      <DependentUpon>frmUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnidadMedida.resx">
+      <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresion.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RptFechaVenc.rdlc" />
+    <EmbeddedResource Include="RptKardex.rdlc" />
+    <EmbeddedResource Include="RptSalida.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptEntrada.rdlc" />
+    <EmbeddedResource Include="RptProveedor.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptPersonal.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptEntrada.resx">
+      <DependentUpon>RptEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptProducto.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptPersonal.resx">
+      <DependentUpon>RptPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptProveedor.resx">
+      <DependentUpon>RptProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptSalida.resx">
+      <DependentUpon>RptSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTopProductos.rdlc" />
+    <EmbeddedResource Include="RptTopProductosa.rdlc" />
+    <None Include="DBSYSCONDataSet.xsc">
+      <DependentUpon>DBSYSCONDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet.xss">
+      <DependentUpon>DBSYSCONDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet1.xsc">
+      <DependentUpon>DBSYSCONDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet1.xss">
+      <DependentUpon>DBSYSCONDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet10.xsc">
+      <DependentUpon>DBSYSCONDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet10.xss">
+      <DependentUpon>DBSYSCONDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet11.xsc">
+      <DependentUpon>DBSYSCONDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet11.xss">
+      <DependentUpon>DBSYSCONDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet12.xsc">
+      <DependentUpon>DBSYSCONDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet12.xss">
+      <DependentUpon>DBSYSCONDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet13.xsc">
+      <DependentUpon>DBSYSCONDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet13.xss">
+      <DependentUpon>DBSYSCONDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet14.xsc">
+      <DependentUpon>DBSYSCONDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet14.xss">
+      <DependentUpon>DBSYSCONDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet15.xsc">
+      <DependentUpon>DBSYSCONDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet15.xss">
+      <DependentUpon>DBSYSCONDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet16.xsc">
+      <DependentUpon>DBSYSCONDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet16.xss">
+      <DependentUpon>DBSYSCONDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet17.xsc">
+      <DependentUpon>DBSYSCONDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet17.xss">
+      <DependentUpon>DBSYSCONDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet18.xsc">
+      <DependentUpon>DBSYSCONDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet18.xss">
+      <DependentUpon>DBSYSCONDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet19.xsc">
+      <DependentUpon>DBSYSCONDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet19.xss">
+      <DependentUpon>DBSYSCONDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet2.xsc">
+      <DependentUpon>DBSYSCONDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet2.xss">
+      <DependentUpon>DBSYSCONDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet20.xsc">
+      <DependentUpon>DBSYSCONDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet20.xss">
+      <DependentUpon>DBSYSCONDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet21.xsc">
+      <DependentUpon>DBSYSCONDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet21.xss">
+      <DependentUpon>DBSYSCONDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet22.xsc">
+      <DependentUpon>DBSYSCONDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet22.xss">
+      <DependentUpon>DBSYSCONDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet3.xsc">
+      <DependentUpon>DBSYSCONDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet3.xss">
+      <DependentUpon>DBSYSCONDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet4.xsc">
+      <DependentUpon>DBSYSCONDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet4.xss">
+      <DependentUpon>DBSYSCONDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet5.xsc">
+      <DependentUpon>DBSYSCONDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet5.xss">
+      <DependentUpon>DBSYSCONDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet6.xsc">
+      <DependentUpon>DBSYSCONDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet6.xss">
+      <DependentUpon>DBSYSCONDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet7.xsc">
+      <DependentUpon>DBSYSCONDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet7.xss">
+      <DependentUpon>DBSYSCONDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet8.xsc">
+      <DependentUpon>DBSYSCONDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet8.xss">
+      <DependentUpon>DBSYSCONDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet9.xsc">
+      <DependentUpon>DBSYSCONDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DBSYSCONDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBSYSCONDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBSYSCONDataSet9.xss">
+      <DependentUpon>DBSYSCONDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\239_07_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ubicacion_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrega_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\embalaje_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapa_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrega %281%29_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tienda-online_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recruitment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-10-03 %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-10-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-10-03 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-10-03 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-10-03 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaAcceso\CapaAcceso.csproj">
+      <Project>{4a0dba33-c8ce-467f-a832-3ecc1b1fa4d6}</Project>
+      <Name>CapaAcceso</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
